@@ -4,9 +4,8 @@ Der Queere Event Editor and Notificator.
 
 ## Next steps
 
-* implement tailwind into project
-* build simple button with tailwind
-* button should toggle overlay form to create simple event
+* create db (podman)
+* create form to insert data
 * list of all events
 
 ## Developing
