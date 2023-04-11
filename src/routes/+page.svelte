@@ -1,5 +1,5 @@
 <script>
-	import OverlayButton from '$lib/overlay_button.svelte';
+	import OverlayButton from '$lib/components/overlay_button.svelte';
 </script>
 
 <div class="flex flex-row justify-center">

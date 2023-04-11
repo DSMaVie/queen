@@ -23,8 +23,9 @@ export async function add_event(event: { name: string, description: string, star
 
 export async function connect_to_db() {
     dotenv.config()
-
-    await mongoose.connect(`mongodb:\\\\${process.env.DB_URL}"${process.env.DB_PORT}`, {
+    const connect_string = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_URL}:${process.env.DB_PORT}`
+    console.log(`connecting to ${connect_string}`) // hide pw
+    await mongoose.connect(connect_string, {
         user: process.env.DB_USER,
         pass: process.env.DB_PASS
     })
