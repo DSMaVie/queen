@@ -1,6 +1,6 @@
 import * as dotenv from "dotenv"
 import mongoose from "mongoose"
-import { Event, channels } from "./db_definitions"
+import { CHANNELS, Event } from "../db_definitions"
 
 export async function list_events(from?: Date, to?: Date) {
     let filter: { $gte?: Date, $lte?: Date } = {}
@@ -14,11 +14,13 @@ export async function list_events(from?: Date, to?: Date) {
     return await Event.find({ date: filter })
 }
 
-export async function add_event(event: { name: string, description: string, start: Date, end?: Date, channels?: [channels] }) {
-    const new_event_doc = new Event(event)
-    await new_event_doc.save()
+// export async function add_event(event: { name: string, description: string, start: Date, end?: Date, channels?: [CHANNELS] }) {
+//     const new_event_doc = new Event(event)
+//     await new_event_doc.save()
 
-}
+// }
+
+
 
 
 export async function connect_to_db() {

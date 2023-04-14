@@ -1,9 +1,9 @@
 import { Schema, model, type InferSchemaType } from "mongoose";
 
-export enum channels {
-    instagram = "instagram",
-    twitter = "twitter",
-    newsletter = "newsletter"
+export enum CHANNELS {
+    instagram = "Instagram",
+    twitter = "Twitter",
+    newsletter = "Newsletter"
 }
 
 
@@ -14,7 +14,7 @@ const eventSchema = new Schema({
     start: { type: Date, required: true },
     end: Date,
     channels: [{
-        type: String, enum: channels
+        type: String, enum: CHANNELS
     }]
 })
 

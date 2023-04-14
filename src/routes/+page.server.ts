@@ -1,5 +1,5 @@
 import { connect_to_db } from "$lib/server/db_connector";
-import type { PageServerLoad } from "./$types";
+import type { Actions, PageServerLoad } from "./$types";
 
 
 export const load = (async () => {
@@ -12,3 +12,10 @@ export const load = (async () => {
 
     return {}
 }) satisfies PageServerLoad;
+
+
+export const actions: Actions = {
+    add_event: async ({ request }) => {
+        console.log( await request.formData())
+    }
+};
